@@ -155,7 +155,7 @@ const values = [2, 0, '', null, 'sdfv', undefined, {}, [], 'sleh', ' ']
 const truthy = values.filter(value => {
     if (value) {
         // console.log('value', value);
-        return value
+        return true
     }
 })
 // console.log(truthy);
@@ -163,14 +163,22 @@ const falsy = values.filter(value => !value)
 // console.log(falsy);
 
 // explicite falsy value from an object
-
-const obj = { a: '', b: 0, c: null, d: undefined, e: {}, f: [], g: 'muha', h: 'saleh' }
+const obj = { a: '', b: 0, c: null, d: undefined, e: {}, f: [], g: 'muha', h: 'saleh', i: ' ', j: NaN }
 
 const findTruth = (objs) => {
-    for (const obj in objs) {
+    for (let obj in objs) {
+        if (!objs[obj]) {
+            delete objs[obj];
+
+        }
 
     }
+    return objs
 }
+const truthObj = findTruth(obj)
+console.log(truthObj);
+
+
 
 
 
