@@ -100,7 +100,84 @@ const findLongestString = (names) => {
 const namesSentence = 'muhammad sa saleh ahmed parvej hussen abdus-samad-azad mehedi hussen miraz'
 const names = namesSentence.split(' ')
 const nameAndIndex = findLongestString(names)
-console.log(nameAndIndex);
+// console.log(nameAndIndex);
+
+//1 to 100 er moddhye kun nmber gulu 3 othoba 5 enbong 3,5 uboy dhara bibajjo
+const fizBuzz = (number) => {
+    let totalFizBuzz = { fizz: [], buzz: [], fizBuzz: [], general: [] }
+    for (let i = 1; i <= number; i++) {
+        // console.log('i=>', i, 'number=>', number);
+
+        if (i % 15 === 0) {
+            totalFizBuzz.fizBuzz.push(i)
+            // console.log(`${i} is fizzBuzz`);
+
+        }
+        else if (i % 3 === 0) {
+            totalFizBuzz.fizz.push(i)
+            // console.log(`${i} is buzz`);
+
+        }
+        else if (i % 5 === 0) {
+            totalFizBuzz.buzz.push(i)
+            // console.log(`${i} is fizz`);
+
+        }
+
+        else {
+            totalFizBuzz.general.push(i)
+            // console.log(i);
+
+        }
+    }
+    return totalFizBuzz
+}
+const calucation = fizBuzz(100)
+// console.log(calucation.fizBuzz, calucation.fizz, calucation.buzz, calucation.general);
+
+//explicite falsy value from an array
+const findTruthy = (values) => {
+    let truthy = []
+    let falsy = []
+    for (const value of values) {
+        if (value) {
+            truthy.push(value)
+        }
+        else {
+            falsy.push(value)
+        }
+    }
+    return [truthy, falsy]
+}
+// const value = findTruthy(values)
+// console.log(value);
+const values = [2, 0, '', null, 'sdfv', undefined, {}, [], 'sleh', ' ']
+const truthy = values.filter(value => {
+    if (value) {
+        // console.log('value', value);
+        return value
+    }
+})
+// console.log(truthy);
+const falsy = values.filter(value => !value)
+// console.log(falsy);
+
+// explicite falsy value from an object
+
+const obj = { a: '', b: 0, c: null, d: undefined, e: {}, f: [], g: 'muha', h: 'saleh' }
+
+const findTruth = (objs) => {
+    for (const obj in objs) {
+
+    }
+}
+
+
+
+
+
+
+
 
 
 
